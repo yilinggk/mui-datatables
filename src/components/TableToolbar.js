@@ -9,12 +9,13 @@ import TableViewCol from './TableViewCol';
 import TableSearch from './TableSearch';
 import SearchIcon from '@material-ui/icons/Search';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
+import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ViewColumnIcon from '@material-ui/icons/ViewColumn';
 import FilterIcon from '@material-ui/icons/FilterList';
 import ReactToPrint from 'react-to-print';
 import styled from '../styled';
-import { createCSVDownload } from '../utils';
+import { createCSVDownload, createSave } from '../utils';
 
 export const defaultToolbarStyles = (theme, props) => ({
   root: {},
@@ -97,6 +98,12 @@ class TableToolbar extends React.Component {
   handleCSVDownload = () => {
     const { data, columns, options } = this.props;
     createCSVDownload(columns, data, options);
+  };
+
+  handleSave = () => {
+    const { data, columns, options } = this.props;
+    createSave(columns, data, options)
+
   };
 
   setActiveIcon = iconName => {
@@ -206,6 +213,13 @@ class TableToolbar extends React.Component {
             <Tooltip title={downloadCsv}>
               <IconButton aria-label={downloadCsv} classes={{ root: classes.icon }} onClick={this.handleCSVDownload}>
                 <DownloadIcon />
+              </IconButton>
+            </Tooltip>
+          )}
+          {options.save && (
+            <Tooltip title={saveJson}>
+              <IconButton aria-label={saveJson} classes={{ root: classes.icon }} onClick={this.handleSave}>
+                <SaveIcon />
               </IconButton>
             </Tooltip>
           )}

@@ -26,6 +26,12 @@ function sortCompare(order) {
   };
 }
 
+function createSave(columns, data, options) {
+  options.onDownload
+    ? options.onDownload(buildHead, buildBody, columns, data)
+    : null
+}
+
 function createCSVDownload(columns, data, options) {
   const replaceDoubleQuoteInString = columnData =>
     typeof columnData === 'string' ? columnData.replace(/\"/g, '""') : columnData;
@@ -85,4 +91,4 @@ function createCSVDownload(columns, data, options) {
   }
 }
 
-export { buildMap, getCollatorComparator, sortCompare, createCSVDownload };
+export { buildMap, getCollatorComparator, sortCompare, createCSVDownload, createSave };
