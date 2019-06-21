@@ -173,7 +173,7 @@ class TableToolbar extends React.Component {
       tableRef,
     } = this.props;
 
-    const { search, downloadCsv, print, viewColumns, filterTable } = options.textLabels.toolbar;
+    const { search, downloadCsv, saveJson, print, viewColumns, filterTable } = options.textLabels.toolbar;
     const { showSearch, searchText } = this.state;
 
     return (
