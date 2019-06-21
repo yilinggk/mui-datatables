@@ -37,10 +37,7 @@ node_modules
 # Optional npm cache directory
 .npm
 
-# Build Data
-dist/*
-es/*
-lib/*
+
 
 # Docs
 docs/.next/*

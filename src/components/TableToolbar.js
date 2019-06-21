@@ -102,8 +102,7 @@ class TableToolbar extends React.Component {
 
   handleSave = () => {
     const { data, columns, options } = this.props;
-    createSave(columns, data, options)
-
+    createSave(columns, data, options);
   };
 
   setActiveIcon = iconName => {

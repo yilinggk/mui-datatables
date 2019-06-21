@@ -27,9 +27,7 @@ function sortCompare(order) {
 }
 
 function createSave(columns, data, options) {
-  options.onDownload
-    ? options.onDownload(buildHead, buildBody, columns, data)
-    : null
+  options.onDownload ? options.onDownload(buildHead, buildBody, columns, data) : null;
 }
 
 function createCSVDownload(columns, data, options) {
